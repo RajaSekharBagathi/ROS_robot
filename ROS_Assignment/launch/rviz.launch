@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+   <param name="robot_description" textfile="$(find com760_b00829388_pkg)/urdf/com760bot.urdf" />
+   <arg name="gui" default="true" />
+   
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find com760_b00829388_pkg)/rviz/urdf.rviz" required="true"/>
+</launch>
