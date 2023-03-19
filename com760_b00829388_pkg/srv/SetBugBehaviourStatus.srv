@@ -1,4 +1,0 @@
-bool flag      #e.g for enable / disable the provided wall following service
-string behaviour  # type of behaviour e.g following a wall and going to goal
----
-string message    # informational, e.g for successful trigging service or error message
