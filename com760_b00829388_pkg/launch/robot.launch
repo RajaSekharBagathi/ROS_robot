@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="robot_description" command="cat '$(find com760_b00829388_pkg)/urdf/com760bot.urdf'"/>
+    <arg name="x" default="0"/>
+    <arg name="y" default="4"/>
+    <arg name="z" default="0"/>
+    
+    <node name="robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model com760bot -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+</launch>
+

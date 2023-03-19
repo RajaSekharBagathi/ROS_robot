@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+     <arg name="robot" default="machines"/>
+     <arg name="debug" default="false"/>
+     <arg name="gui" default="true"/>
+     <arg name="headless" default="false"/>
+     <arg name="pause" default="false"/>
+     <arg name="world" default="com760world"/>
+     
+     <include file="$(find gazebo_ros)/launch/empty_world.launch">
+          <arg name="world_name" value="$(find com760_b00829388_pkg)/world/$(arg world).world"/>
+          <arg name="paused" value="$(arg pause)"/>
+          <arg name="use_sim_time" value="true"/>
+          <arg name="gui" value="$(arg gui)"/>
+          <arg name="recording" value="false"/>
+          <arg name="debug" value="$(arg debug)"/>
+          <arg name="headless" value="$(arg headless)"/>
+          <env name="GAZEBO_MODEL_PATH" value="$(find com760_b00829388_pkg)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+     </include>
+     
+</launch>

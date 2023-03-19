@@ -1,0 +1,21 @@
+<launch>
+     <node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+     <node pkg="com760_b00829388_pkg" type="move.py" name="teleop" output="screen"/>
+
+
+     <node name="broadcaster1" pkg="com760_b00829388_pkg" type="broadcaster.py" respawn="false" output="screen">
+     <param name="turtle" type="string" value="turtle1"/>
+     </node>
+
+     <node name="broadcaster2" pkg="com760_b00829388_pkg" type="broadcaster.py" respawn="false" output="screen">
+     <param name="turtle" type="string" value="turtle2" />
+     </node>
+
+     <node name="broadcaster3" pkg="com760_b00829388_pkg" type="broadcaster.py" respawn="false" output="screen">
+     <param name="turtle" type="string" value="turtle3" />
+     </node>
+
+     <node pkg="com760_b00829388_pkg" type="listener.py" name="listener" output="screen"/>
+
+     <node pkg="com760_b00829388_pkg" type="frame.py" name="broadcaster_fixed" output="screen"/>
+</launch>
